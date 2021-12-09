@@ -1,0 +1,13 @@
+﻿
+@model List<object>
+<form asp-action="List2">
+  <label>Tên điểm cách ly</label>
+  <select name="MaDiemCachLy" >
+        @foreach (var item in Model)
+        {
+            <option value="@item.GetType().GetProperty("MaDiemCachLy").GetValue(item, null)" >@item.GetType().GetProperty("TenDiem").GetValue(item, null)</option>
+        }
+    </select>
+  <br><br>
+  <input type="submit" value="Submit" class="btn btn-primary">
+</form>

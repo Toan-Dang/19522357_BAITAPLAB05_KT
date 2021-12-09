@@ -1,48 +1,42 @@
-﻿@model _BAITAPLAB05_KT.Models.CongNhan
-
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model object
 @{
-    ViewData["Title"] = "Details";
 }
+<form>
+    <div class="form-group">
+        <label class="control-label">Mã công nhân</label>
+        <input value="@Model.GetType().GetProperty("MaCongNhan").GetValue(Model,null)" class="form-control" />
 
-<h1>Details</h1>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Tên công nhân</label>
+        <input value="@Model.GetType().GetProperty("TenCongNhan").GetValue(Model,null)" class="form-control" />
 
-<div>
-    <h4>CongNhan</h4>
-    <hr />
-    <dl class="row">
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.TenCongNhan)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.TenCongNhan)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.GioiTinh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.GioiTinh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NamSinh)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NamSinh)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.NuocVe)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.NuocVe)
-        </dd>
-        <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.DiemCachLy)
-        </dt>
-        <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.DiemCachLy.MaDiemCachLy)
-        </dd>
-    </dl>
-</div>
-<div>
-    <a asp-action="Edit" asp-route-id="@Model.MaCongNhan">Edit</a> |
-    <a asp-action="Index">Back to List</a>
-</div>
+    </div>
+    <div class="form-group">
+        <label class="control-label">Giới tính</label>
+        @if (String.Compare(@Model.GetType().GetProperty("GioiTinh").GetValue(Model, null).ToString(), "1", true) == 0) {
+            <input name="fname3" type="checkbox" checked>
+        } else {
+            <input name="fname3" type="checkbox">
+        }
+
+    </div>
+
+
+
+    <div class="form-group">
+        <label class="control-label">Năm sinh</label>
+        <input value="@Model.GetType().GetProperty("NamSinh").GetValue(Model,null)" class="form-control" />
+
+    </div>
+
+    <div class="form-group">
+        <label class="control-label">Nước về</label>
+        <input value="@Model.GetType().GetProperty("NuocVe").GetValue(Model,null)" class="form-control" />
+
+    </div>
+
+</form>

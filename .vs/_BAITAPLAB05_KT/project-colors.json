@@ -1,0 +1,16 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "1bd76204-d1f7-43c1-a759-f7101b16ed66": {
+      "ProjectGuid": "1bd76204-d1f7-43c1-a759-f7101b16ed66",
+      "DisplayName": "_BAITAPLAB05_KT",
+      "ColorIndex": 0
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Miscellaneous Files",
+      "ColorIndex": -1
+    }
+  },
+  "NextColorIndex": 1
+}

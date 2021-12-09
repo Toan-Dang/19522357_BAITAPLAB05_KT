@@ -24,8 +24,8 @@ namespace _BAITAPLAB05_KT {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllersWithViews();
-            services.AddDbContext<AppDbContext>(option =>
-            option.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.Add(new ServiceDescriptor(typeof(AppDbContext),
+                new AppDbContext(Configuration.GetConnectionString("DefaultConnection"))));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

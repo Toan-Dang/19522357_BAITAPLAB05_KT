@@ -1,0 +1,26 @@
+﻿
+@model List<object>
+
+<table class = "table">
+        <tr>
+            <th>Mã công nhân</th>
+            <th>Tên công nhân</th>
+            <th>Chức năng</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>
+                @item.GetType().GetProperty("MaCongNhan").GetValue(item, null)
+            </td>
+            <td>
+                @item.GetType().GetProperty("TenCongNhan").GetValue(item, null)
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.GetType().GetProperty("MaCongNhan").GetValue(item, null)">Details</a>
+                <a asp-action="Delete" asp-route-id="@item.GetType().GetProperty("MaCongNhan").GetValue(item, null)">Delete</a>
+            </td>
+        </tr>
+        }
+ </table>
